@@ -13,108 +13,88 @@ margin:0;
 font-family: 'Segoe UI', sans-serif;
 color:white;
 text-align:center;
-background: radial-gradient(circle at top, #1a1a1a, #000);
+background:#0f0f0f;
 }
 
-/* MAIN CONTAINER */
+/* CONTAINER */
 .container{
 padding:25px;
 max-width:700px;
 margin:auto;
 }
 
-/* LOGO */
-..logo{
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
-margin-top:20px;
+/* ✅ LOGO (MEDIUM PERFECT SIZE) */
+.logo{
+text-align:center;
 }
 
 .logo img{
-width:45px;
-height:45px;
-border-radius:50%;
-object-fit:cover;
-box-shadow:none;
-}
-
-.brand{
-font-size:20px;
-font-weight:bold;
-color:#ff2d55;
+width:120px;
+margin-top:20px;
+border-radius:15px;
+object-fit:contain;
 }
 
 /* TITLE */
 h1{
-font-size:38px;
+font-size:36px;
 margin-top:10px;
-letter-spacing:1px;
 }
 
 /* STORY */
 .story{
 font-size:17px;
-line-height:1.7;
+line-height:1.6;
 margin-top:20px;
-opacity:0.9;
 }
 
 /* POSTER */
 .poster img{
 width:60%;
-border-radius:20px;
-margin-top:25px;
-box-shadow:0 10px 40px rgba(0,0,0,0.7);
+border-radius:15px;
+margin-top:20px;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .button{
 display:block;
 margin:15px auto;
 padding:15px;
 width:85%;
-background: linear-gradient(45deg,#ff2d55,#ff6a88);
+background:#ff2d55;
 color:white;
 text-decoration:none;
 border-radius:30px;
 font-size:17px;
-font-weight:bold;
-transition:0.3s;
-}
-
-.button:hover{
-transform:scale(1.05);
 }
 
 /* TEXTAREA */
 textarea{
 width:90%;
 height:120px;
-border-radius:15px;
-padding:12px;
+border-radius:10px;
+padding:10px;
 border:none;
 margin-top:10px;
 }
 
-/* SUBMIT */
+/* SEND BUTTON */
 .submit{
-margin-top:12px;
+margin-top:10px;
 padding:12px 25px;
 border:none;
-border-radius:25px;
+border-radius:20px;
 background:#00c853;
 color:white;
 font-size:16px;
 }
 
-/* DASHBOARD PUBLIC */
+/* DASHBOARD */
 .dashboard{
 margin-top:30px;
-background:rgba(255,255,255,0.05);
+background:#1a1a1a;
 padding:20px;
-border-radius:20px;
+border-radius:15px;
 }
 
 </style>
@@ -128,14 +108,13 @@ border-radius:20px;
 <!-- LOGO -->
 <div class="logo">
   <img src="logo.png" alt="logo">
-  <span class="brand">Soul Space</span>
 </div>
 
 <h1>🌿 Soul Space Chennai</h1>
 
 <div class="story">
-<p>A safe space where feelings are heard, not judged.</p>
-<p>With chai, music and open hearts, every story finds peace.</p>
+<p>A safe space where people share feelings without judgement.</p>
+<p>With chai, music and real conversations, every story becomes lighter.</p>
 <p><b>You're not alone anymore. We're here for you.</b></p>
 </div>
 
@@ -162,7 +141,7 @@ border-radius:20px;
 
 <button class="submit" onclick="sendWhatsApp()">Send to Soul Space 💚</button>
 
-<!-- 🌍 PUBLIC DASHBOARD -->
+<!-- PUBLIC DASHBOARD -->
 <div class="dashboard">
 
 <h3>🌍 Community Activity</h3>
@@ -178,7 +157,7 @@ border-radius:20px;
 
 <script>
 
-/* 📲 SEND TO WHATSAPP */
+/* WHATSAPP SEND */
 function sendWhatsApp(){
 
 let msg = document.getElementById("msg").value;
@@ -192,7 +171,7 @@ let url = "https://wa.me/916380896485?text=" + encodeURIComponent(msg);
 
 window.open(url, "_blank");
 
-/* Save count locally */
+/* COUNT */
 let count = localStorage.getItem("count") || 0;
 count++;
 localStorage.setItem("count", count);
