@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Soul Space Chennai</title>
+
+<!-- Font Awesome CDN for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
 body{
@@ -77,11 +80,9 @@ h1{
   background:#ff4d75;
 }
 
-/* SVG ICONS */
-.button svg{
-  width:24px;
-  height:24px;
-  fill:white;
+/* ICONS inside buttons */
+.button i{
+  font-size:20px;
 }
 
 /* TEXTAREA */
@@ -163,17 +164,13 @@ textarea{
   <img src="poster.jpg" alt="Soul Space Poster">
 </div>
 
-<!-- BUTTONS WITH SVG ICONS -->
+<!-- BUTTONS WITH ICONS -->
 <a class="button" href="https://instagram.com/soulspacechennai" target="_blank">
-  <!-- Instagram SVG Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-115.1 51.5-115.1 115.1s51.5 115.1 115.1 115.1 115.1-51.5 115.1-115.1S287.6 141 224.1 141zm0 190c-41.4 0-75-33.6-75-75s33.6-75 75-75 75 33.6 75 75-33.6 75-75 75zm146.4-194.1c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.6s-57.9-34.5-93.6-36.2c-37-2.1-147.8-2.1-184.8 0-35.7 1.7-67.3 9.9-93.6 36.2s-34.5 57.9-36.2 93.6c-2.1 37-2.1 147.8 0 184.8 1.7 35.7 9.9 67.3 36.2 93.6s57.9 34.5 93.6 36.2c37 2.1 147.8 2.1 184.8 0 35.7-1.7 67.3-9.9 93.6-36.2s34.5-57.9 36.2-93.6c2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.5-23 34.7-42.5 42.5-29.4 11.7-99.3 9-132.3 9s-102.9 2.6-132.3-9c-19.5-7.8-34.7-23-42.5-42.5-11.7-29.4-9-99.3-9-132.3s-2.6-102.9 9-132.3c7.8-19.5 23-34.7 42.5-42.5 29.4-11.7 99.3-9 132.3-9s102.9-2.6 132.3 9c19.5 7.8 34.7 23 42.5 42.5 11.7 29.4 9 99.3 9 132.3s2.6 102.9-9 132.3z"/></svg>
-  Follow on Instagram
+  <i class="fab fa-instagram"></i> Follow on Instagram
 </a>
 
 <a class="button" href="https://wa.me/916380896485" target="_blank">
-  <!-- WhatsApp SVG Icon -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339-10.9 192.7-6.2 143.3 63.8c-22.1 31.1-26.7 68.1-26.7 104.3 0 29.2 8.1 57.8 19.4 84.4l-21.1 77.3 79.8-20.9c26.8 12.2 54.4 19.6 83.1 19.6 36.1 0 71-10 102-26.3 70.2-49.5 74.8-195.5-14.6-247.1zM224 312c-38.6 0-70-31.4-70-70s31.4-70 70-70 70 31.4 70 70-31.4 70-70 70z"/></svg>
-  Chat / Book Tickets
+  <i class="fab fa-whatsapp"></i> Chat / Book Tickets
 </a>
 
 <!-- FEELINGS -->
@@ -185,24 +182,4 @@ textarea{
 <!-- VISITOR COUNT + QUOTES -->
 <div class="visitors">
 <h3>🌍 Visitors</h3>
-<img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor=%23ff2d55" />
-<p class="quote">"What happens when your heart finally speaks?" ✨</p>
-<p class="quote">"Every word shared here finds a heart ready to listen." 💚</p>
-</div>
-
-<script>
-function sendToWhatsApp(){
-  let message = document.getElementById("msg").value;
-  if(message.trim() === ""){
-    alert("Please write something...");
-    return;
-  }
-  let phone = "916380896485";
-  let finalMessage = "Hi Soul Space, I want to share this feeling:\n\n" + message;
-  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(finalMessage);
-  window.open(url,"_blank");
-}
-</script>
-
-</body>
-</html>
+<img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor  
