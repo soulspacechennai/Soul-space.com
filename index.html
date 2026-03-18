@@ -1,10 +1,10 @@
-  <!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Soul Space Chennai</title>
 
-<!-- Font Awesome CDN for icons -->
+<!-- Font Awesome for icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
@@ -79,8 +79,6 @@ h1{
 .button:hover{
   background:#ff4d75;
 }
-
-/* ICONS inside buttons */
 .button i{
   font-size:20px;
 }
@@ -119,20 +117,26 @@ textarea{
   background:rgba(255,255,255,0.05);
   border-radius:20px;
   backdrop-filter:blur(10px);
+  text-align:center;
 }
 
-.visitors p{
-  margin-top:12px;
-  font-size:16px;
-  opacity:0.9;
-  line-height:1.5;
+.visitors h3{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.visitors img{
+  margin:10px 0;
+  max-width:200px;
 }
 
 /* CURIOUS QUOTES STYLE */
 .quote{
   font-style:italic;
   color:#ff2d55;
-  margin:8px 0;
+  font-size:16px;
+  margin:6px 0;
+  display:block;
   transition:0.3s;
 }
 .quote:hover{
@@ -181,5 +185,26 @@ textarea{
 
 <!-- VISITOR COUNT + QUOTES -->
 <div class="visitors">
-<h3>🌍 Visitors</h3>
-<img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor  
+  <h3>🌍 Visitors</h3>
+  <!-- Using a reliable visitor badge API -->
+  <img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor=%23ff2d55" alt="Visitor count" />
+  <span class="quote">"What happens when your heart finally speaks?" ✨</span>
+  <span class="quote">"Every word shared here finds a heart ready to listen." 💚</span>
+</div>
+
+<script>
+function sendToWhatsApp(){
+  let message = document.getElementById("msg").value;
+  if(message.trim() === ""){
+    alert("Please write something...");
+    return;
+  }
+  let phone = "916380896485";
+  let finalMessage = "Hi Soul Space, I want to share this feeling:\n\n" + message;
+  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(finalMessage);
+  window.open(url,"_blank");
+}
+</script>
+
+</body>
+</html>
