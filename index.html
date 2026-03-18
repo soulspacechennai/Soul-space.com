@@ -7,17 +7,16 @@
 
 <style>
 
+/* 🌑 PREMIUM BACKGROUND */
 body{
 margin:0;
-font-family:Arial;
+font-family: 'Segoe UI', sans-serif;
 color:white;
 text-align:center;
-
-/* ❌ removed animation */
-/* ✅ simple premium dark background */
-background:#0f0f0f;
+background: radial-gradient(circle at top, #1a1a1a, #000);
 }
 
+/* MAIN CONTAINER */
 .container{
 padding:25px;
 max-width:700px;
@@ -26,76 +25,81 @@ margin:auto;
 
 /* LOGO */
 .logo img{
-width:140px;
-margin-top:15px;
-border-radius:12px;
-box-shadow:0 0 25px #ff2d55;
+width:130px;
+margin-top:20px;
+border-radius:15px;
+box-shadow:0 0 25px rgba(255,45,85,0.6);
 }
 
 /* TITLE */
 h1{
 font-size:38px;
 margin-top:10px;
+letter-spacing:1px;
 }
 
 /* STORY */
 .story{
-font-size:18px;
-line-height:1.6;
+font-size:17px;
+line-height:1.7;
 margin-top:20px;
+opacity:0.9;
 }
 
 /* POSTER */
 .poster img{
 width:60%;
-border-radius:15px;
-margin-top:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.6);
+border-radius:20px;
+margin-top:25px;
+box-shadow:0 10px 40px rgba(0,0,0,0.7);
 }
 
-/* BUTTON */
+/* BUTTONS */
 .button{
 display:block;
 margin:15px auto;
 padding:15px;
-width:80%;
-background:#ff2d55;
+width:85%;
+background: linear-gradient(45deg,#ff2d55,#ff6a88);
 color:white;
 text-decoration:none;
 border-radius:30px;
-font-size:18px;
+font-size:17px;
+font-weight:bold;
+transition:0.3s;
 }
 
-/* FORM */
-form{
-margin-top:30px;
+.button:hover{
+transform:scale(1.05);
 }
 
+/* TEXTAREA */
 textarea{
 width:90%;
 height:120px;
-border-radius:10px;
-padding:10px;
+border-radius:15px;
+padding:12px;
 border:none;
+margin-top:10px;
 }
 
+/* SUBMIT */
 .submit{
-margin-top:10px;
+margin-top:12px;
 padding:12px 25px;
 border:none;
-border-radius:20px;
+border-radius:25px;
 background:#00c853;
 color:white;
 font-size:16px;
 }
 
-/* ADMIN DASHBOARD */
-#adminPanel{
-display:none;
+/* DASHBOARD PUBLIC */
+.dashboard{
 margin-top:30px;
-background:rgba(255,255,255,0.1);
+background:rgba(255,255,255,0.05);
 padding:20px;
-border-radius:15px;
+border-radius:20px;
 }
 
 </style>
@@ -114,15 +118,9 @@ border-radius:15px;
 <h1>🌿 Soul Space Chennai</h1>
 
 <div class="story">
-
-<p>Soul Space is a safe place where people can share their feelings without judgement.</p>
-
-<p>In a world where many emotions remain unheard, we created a small circle of understanding hearts.</p>
-
-<p>With chai, music and warm conversations, every story becomes lighter.</p>
-
-<p>You're not alone anymore. We're here for you.</p>
-
+<p>A safe space where feelings are heard, not judged.</p>
+<p>With chai, music and open hearts, every story finds peace.</p>
+<p><b>You're not alone anymore. We're here for you.</b></p>
 </div>
 
 <!-- POSTER -->
@@ -132,99 +130,66 @@ border-radius:15px;
 
 <!-- BUTTONS -->
 <a class="button" href="https://instagram.com/soulspacechennai">
-Follow on Instagram
+📸 Follow on Instagram
 </a>
 
 <a class="button" href="https://wa.me/916380896485">
-Chat on WhatsApp / Book Tickets
+💬 Chat / Book Tickets
 </a>
 
-<!-- FORM -->
-<h2>Share Your Feelings</h2>
+<!-- FEELINGS -->
+<h2>💭 Share Your Feelings</h2>
 
-<form onsubmit="saveMessage(event)">
 <textarea id="msg" placeholder="Write your feelings here..."></textarea>
+
 <br>
-<button class="submit">Send</button>
-</form>
 
-<!-- 🔒 ADMIN DASHBOARD -->
-<div id="adminPanel">
+<button class="submit" onclick="sendWhatsApp()">Send to Soul Space 💚</button>
 
-<h3>📊 Owner Dashboard</h3>
+<!-- 🌍 PUBLIC DASHBOARD -->
+<div class="dashboard">
 
-<p>Total Visitors:</p>
-<img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor=%23ff2d55" />
+<h3>🌍 Community Activity</h3>
 
-<h3>📝 Messages</h3>
-<ul id="messages"></ul>
+<p>Visitors:</p>
+<img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&countColor=%23ff2d55" />
+
+<p id="count"></p>
 
 </div>
-
-<!-- SECRET BUTTON -->
-<button onclick="openAdmin()" style="opacity:0.1;">.</button>
 
 </div>
 
 <script>
 
-/* PASSWORD ACCESS */
-function openAdmin(){
-let pass = prompt("Enter Admin Password");
-
-if(pass === "soulspace123"){
-document.getElementById("adminPanel").style.display = "block";
-loadMessages();
-}else{
-alert("Access Denied");
-}
-}
-
-/* SAVE MESSAGES */
-function saveMessage(e){
-e.preventDefault();
+/* 📲 SEND TO WHATSAPP */
+function sendWhatsApp(){
 
 let msg = document.getElementById("msg").value;
 
-if(msg.trim() === "") return;
-
-let messages = JSON.parse(localStorage.getItem("soul_msgs")) || [];
-messages.push(msg);
-
-localStorage.setItem("soul_msgs", JSON.stringify(messages));
-
-document.getElementById("msg").value = "";
-
-alert("Your feelings are received 💚");
+if(msg.trim() === ""){
+alert("Write something 💭");
+return;
 }
 
-/* LOAD MESSAGES */
-function loadMessages(){
+let url = "https://wa.me/916380896485?text=" + encodeURIComponent(msg);
 
-let list = document.getElementById("messages");
-list.innerHTML = "";
+window.open(url, "_blank");
 
-let messages = JSON.parse(localStorage.getItem("soul_msgs")) || [];
+/* Save count locally */
+let count = localStorage.getItem("count") || 0;
+count++;
+localStorage.setItem("count", count);
 
-messages.forEach(m => {
-let li = document.createElement("li");
-li.innerText = m;
-list.appendChild(li);
-});
+document.getElementById("count").innerText = "People shared: " + count;
 
 }
+
+/* LOAD COUNT */
+let count = localStorage.getItem("count") || 0;
+document.getElementById("count").innerText = "People shared: " + count;
 
 </script>
 
 </body>
 </html>
-<a href="admin.html" style="
-display:inline-block;
-margin-top:20px;
-padding:10px 20px;
-background:white;
-color:black;
-border-radius:20px;
-text-decoration:none;">
-Admin Login
-</a>
