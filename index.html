@@ -9,7 +9,7 @@
 
 body{
 margin:0;
-font-family:Arial;
+font-family:'Segoe UI', sans-serif;
 color:white;
 text-align:center;
 background:#0f0f0f;
@@ -43,6 +43,7 @@ margin-top:10px;
 font-size:17px;
 line-height:1.6;
 margin-top:20px;
+opacity:0.9;
 }
 
 /* 🔥 BIG POSTER */
@@ -54,9 +55,10 @@ margin-top:25px;
 display:block;
 margin-left:auto;
 margin-right:auto;
+box-shadow:0 10px 40px rgba(0,0,0,0.7);
 }
 
-/* BUTTON */
+/* BUTTONS */
 .button{
 display:block;
 margin:15px auto;
@@ -67,27 +69,30 @@ color:white;
 text-decoration:none;
 border-radius:30px;
 font-size:17px;
+font-weight:500;
 }
 
 /* TEXTAREA */
 textarea{
 width:90%;
 height:120px;
-border-radius:10px;
-padding:10px;
+border-radius:12px;
+padding:12px;
 border:none;
-margin-top:10px;
+margin-top:15px;
+font-size:14px;
 }
 
 /* SEND BUTTON */
 .submit{
-margin-top:10px;
-padding:12px 25px;
+margin-top:12px;
+padding:14px 30px;
 border:none;
-border-radius:20px;
+border-radius:30px;
 background:#00c853;
 color:white;
 font-size:16px;
+font-weight:bold;
 }
 
 </style>
@@ -98,35 +103,48 @@ font-size:16px;
 
 <div class="container">
 
-<!-- LOGO -->
+<!-- 🔥 LOGO -->
 <div class="logo">
-<img src="logo.png">
+<img src="logo.png" alt="Soul Space Logo">
 </div>
 
 <h1>🌿 Soul Space Chennai</h1>
 
 <div class="story">
-<p>Soul Space is a safe place where people can share their feelings without judgement.</p>
-<p>With chai, music and warm conversations, every story becomes lighter.</p>
+<p>A safe place where people share feelings without judgement.</p>
+<p>With chai, music and real conversations, every story becomes lighter.</p>
 <p><b>You're not alone anymore. We're here for you.</b></p>
 </div>
 
-<!-- POSTER -->
+<!-- 🔥 POSTER -->
 <div class="poster">
-<img src="poster.jpg">
+<img src="poster.jpg" alt="Soul Space Poster">
 </div>
 
 <!-- BUTTONS -->
 <a class="button" href="https://instagram.com/soulspacechennai">
-Follow on Instagram
+📸 Follow on Instagram
 </a>
 
 <a class="button" href="https://wa.me/916380896485">
-Chat / Book Tickets
+💬 Chat / Book Tickets
 </a>
 
 <!-- FEELINGS -->
+<h2>💭 Share Your Feelings</h2>
+
+<textarea id="msg" placeholder="Write your feelings here..."></textarea>
+
+<br>
+
+<button class="submit" onclick="sendToWhatsApp()">
+Share Your Feelings 💚
+</button>
+
+</div>
+
 <script>
+
 function sendToWhatsApp(){
 
 let message = document.getElementById("msg").value;
@@ -136,15 +154,19 @@ alert("Please write something...");
 return;
 }
 
-/* 🔥 YOUR WHATSAPP NUMBER */
+/* YOUR NUMBER */
 let phone = "916380896485";
 
-/* 🔥 AUTO MESSAGE */
-let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent("Hi Soul Space, I want to share this feeling:\n\n" + message);
-}
-</script>
+/* AUTO MESSAGE FORMAT */
+let finalMessage = "Hi Soul Space, I want to share this feeling:\n\n" + message;
 
-</div>
+let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(finalMessage);
+
+window.open(url, "_blank");
+
+}
+
+</script>
 
 </body>
 </html>
