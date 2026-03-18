@@ -6,7 +6,6 @@
 <title>Soul Space Chennai</title>
 
 <style>
-
 body{
 margin:0;
 font-family:'Segoe UI', sans-serif;
@@ -70,6 +69,10 @@ text-decoration:none;
 border-radius:30px;
 font-size:17px;
 font-weight:500;
+transition:0.3s;
+}
+.button:hover{
+background:#ff4d75;
 }
 
 /* TEXTAREA */
@@ -93,16 +96,38 @@ background:#00c853;
 color:white;
 font-size:16px;
 font-weight:bold;
+transition:0.3s;
+}
+.submit:hover{
+background:#00e676;
 }
 
-/* DASHBOARD */
-.dashboard{
+/* VISITOR COUNT & QUOTES */
+.visitors{
 margin-top:30px;
-background:rgba(255,255,255,0.05);
 padding:20px;
+background:rgba(255,255,255,0.05);
 border-radius:20px;
 backdrop-filter:blur(10px);
-display:none;  /* 🔒 hidden by default */
+}
+
+.visitors p{
+margin-top:12px;
+font-size:16px;
+opacity:0.9;
+line-height:1.5;
+}
+
+/* CURIOUS QUOTES STYLE */
+.quote{
+font-style:italic;
+color:#ff2d55;
+margin:8px 0;
+transition:0.3s;
+}
+.quote:hover{
+color:#ff4d75;
+transform:scale(1.05);
 }
 
 </style>
@@ -121,7 +146,7 @@ display:none;  /* 🔒 hidden by default */
 <h1>🌿 Soul Space Chennai</h1>
 
 <div class="story">
-<p>A safe place where people share feelings without judgement.</p>
+<p>A safe space where people share feelings without judgement.</p>
 <p>With chai, music and real conversations, every story becomes lighter.</p>
 <p><b>You're not alone anymore. We're here for you.</b></p>
 </div>
@@ -144,27 +169,20 @@ display:none;  /* 🔒 hidden by default */
 <h2>💭 Share Your Feelings</h2>
 
 <textarea id="msg" placeholder="Write your feelings here..."></textarea>
+
 <br>
 <button class="submit" onclick="sendToWhatsApp()">Share Your Feelings 💚</button>
 
-<!-- 🔒 ADMIN DASHBOARD -->
-<div class="dashboard" id="adminPanel">
-<h3>📊 Admin Dashboard</h3>
-
-<p>Visitor Count:</p>
+<!-- VISITOR COUNT + QUOTES -->
+<div class="visitors">
+<h3>🌍 Visitors</h3>
 <img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor=%23ff2d55" />
 
-<p id="messagesCount">Messages Sent: 0</p>
-</div>
-
-<!-- 🔑 SECRET ADMIN BUTTON -->
-<button onclick="openAdmin()" style="opacity:0.1;position:fixed;bottom:0;right:0;">.</button>
-
+<p class="quote">"What happens when your heart finally speaks?" ✨</p>
+<p class="quote">"Every word shared here finds a heart ready to listen." 💚</p>
 </div>
 
 <script>
-
-/* WHATSAPP SEND */
 function sendToWhatsApp(){
 let message = document.getElementById("msg").value;
 if(message.trim() === ""){
@@ -175,34 +193,7 @@ let phone = "916380896485";
 let finalMessage = "Hi Soul Space, I want to share this feeling:\n\n" + message;
 let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(finalMessage);
 window.open(url,"_blank");
-
-/* SAVE COUNT LOCALLY */
-let messages = JSON.parse(localStorage.getItem("soul_msgs")) || [];
-messages.push(message);
-localStorage.setItem("soul_msgs", JSON.stringify(messages));
-
-updateMessagesCount();
 }
-
-/* UPDATE MESSAGES COUNT */
-function updateMessagesCount(){
-let messages = JSON.parse(localStorage.getItem("soul_msgs")) || [];
-document.getElementById("messagesCount").innerText = "Messages Sent: " + messages.length;
-}
-
-/* LOAD MESSAGES COUNT ON PAGE LOAD */
-updateMessagesCount();
-
-/* 🔒 OPEN ADMIN DASHBOARD */
-function openAdmin(){
-let pass = prompt("Enter Admin Password:");
-if(pass === "soulspace123"){
-document.getElementById("adminPanel").style.display = "block";
-}else{
-alert("Access Denied");
-}
-}
-
 </script>
 
 </body>
