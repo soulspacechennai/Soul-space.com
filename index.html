@@ -21,7 +21,7 @@ max-width:750px;
 margin:auto;
 }
 
-/* 🔥 BIG LOGO */
+/* LOGO */
 .logo img{
 width:230px;
 max-width:90%;
@@ -46,7 +46,7 @@ margin-top:20px;
 opacity:0.9;
 }
 
-/* 🔥 BIG POSTER */
+/* POSTER */
 .poster img{
 width:100%;
 max-width:700px;
@@ -95,6 +95,16 @@ font-size:16px;
 font-weight:bold;
 }
 
+/* DASHBOARD */
+.dashboard{
+margin-top:30px;
+background:rgba(255,255,255,0.05);
+padding:20px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+display:none;  /* 🔒 hidden by default */
+}
+
 </style>
 
 </head>
@@ -103,7 +113,7 @@ font-weight:bold;
 
 <div class="container">
 
-<!-- 🔥 LOGO -->
+<!-- LOGO -->
 <div class="logo">
 <img src="logo.png" alt="Soul Space Logo">
 </div>
@@ -116,7 +126,7 @@ font-weight:bold;
 <p><b>You're not alone anymore. We're here for you.</b></p>
 </div>
 
-<!-- 🔥 POSTER -->
+<!-- POSTER -->
 <div class="poster">
 <img src="poster.jpg" alt="Soul Space Poster">
 </div>
@@ -134,36 +144,63 @@ font-weight:bold;
 <h2>💭 Share Your Feelings</h2>
 
 <textarea id="msg" placeholder="Write your feelings here..."></textarea>
-
 <br>
+<button class="submit" onclick="sendToWhatsApp()">Share Your Feelings 💚</button>
 
-<button class="submit" onclick="sendToWhatsApp()">
-Share Your Feelings 💚
-</button>
+<!-- 🔒 ADMIN DASHBOARD -->
+<div class="dashboard" id="adminPanel">
+<h3>📊 Admin Dashboard</h3>
+
+<p>Visitor Count:</p>
+<img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor=%23ff2d55" />
+
+<p id="messagesCount">Messages Sent: 0</p>
+</div>
+
+<!-- 🔑 SECRET ADMIN BUTTON -->
+<button onclick="openAdmin()" style="opacity:0.1;position:fixed;bottom:0;right:0;">.</button>
 
 </div>
 
 <script>
 
+/* WHATSAPP SEND */
 function sendToWhatsApp(){
-
 let message = document.getElementById("msg").value;
-
 if(message.trim() === ""){
 alert("Please write something...");
 return;
 }
-
-/* YOUR NUMBER */
 let phone = "916380896485";
-
-/* AUTO MESSAGE FORMAT */
 let finalMessage = "Hi Soul Space, I want to share this feeling:\n\n" + message;
-
 let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(finalMessage);
+window.open(url,"_blank");
 
-window.open(url, "_blank");
+/* SAVE COUNT LOCALLY */
+let messages = JSON.parse(localStorage.getItem("soul_msgs")) || [];
+messages.push(message);
+localStorage.setItem("soul_msgs", JSON.stringify(messages));
 
+updateMessagesCount();
+}
+
+/* UPDATE MESSAGES COUNT */
+function updateMessagesCount(){
+let messages = JSON.parse(localStorage.getItem("soul_msgs")) || [];
+document.getElementById("messagesCount").innerText = "Messages Sent: " + messages.length;
+}
+
+/* LOAD MESSAGES COUNT ON PAGE LOAD */
+updateMessagesCount();
+
+/* 🔒 OPEN ADMIN DASHBOARD */
+function openAdmin(){
+let pass = prompt("Enter Admin Password:");
+if(pass === "soulspace123"){
+document.getElementById("adminPanel").style.display = "block";
+}else{
+alert("Access Denied");
+}
 }
 
 </script>
