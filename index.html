@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Soul Space Chennai</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+color:white;
+text-align:center;
+
+/* ❌ removed animation */
+/* ✅ simple premium dark background */
+background:#0f0f0f;
+}
+
+.container{
+padding:25px;
+max-width:700px;
+margin:auto;
+}
+
+/* LOGO */
+.logo img{
+width:140px;
+margin-top:15px;
+border-radius:12px;
+box-shadow:0 0 25px #ff2d55;
+}
+
+/* TITLE */
+h1{
+font-size:38px;
+margin-top:10px;
+}
+
+/* STORY */
+.story{
+font-size:18px;
+line-height:1.6;
+margin-top:20px;
+}
+
+/* POSTER */
+.poster img{
+width:60%;
+border-radius:15px;
+margin-top:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* BUTTON */
+.button{
+display:block;
+margin:15px auto;
+padding:15px;
+width:80%;
+background:#ff2d55;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-size:18px;
+}
+
+/* FORM */
+form{
+margin-top:30px;
+}
+
+textarea{
+width:90%;
+height:120px;
+border-radius:10px;
+padding:10px;
+border:none;
+}
+
+.submit{
+margin-top:10px;
+padding:12px 25px;
+border:none;
+border-radius:20px;
+background:#00c853;
+color:white;
+font-size:16px;
+}
+
+/* ADMIN DASHBOARD */
+#adminPanel{
+display:none;
+margin-top:30px;
+background:rgba(255,255,255,0.1);
+padding:20px;
+border-radius:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- LOGO -->
+<div class="logo">
+<img src="logo.png">
+</div>
+
+<h1>🌿 Soul Space Chennai</h1>
+
+<div class="story">
+
+<p>Soul Space is a safe place where people can share their feelings without judgement.</p>
+
+<p>In a world where many emotions remain unheard, we created a small circle of understanding hearts.</p>
+
+<p>With chai, music and warm conversations, every story becomes lighter.</p>
+
+<p>You're not alone anymore. We're here for you.</p>
+
+</div>
+
+<!-- POSTER -->
+<div class="poster">
+<img src="poster.jpg">
+</div>
+
+<!-- BUTTONS -->
+<a class="button" href="https://instagram.com/soulspacechennai">
+Follow on Instagram
+</a>
+
+<a class="button" href="https://wa.me/916380896485">
+Chat on WhatsApp / Book Tickets
+</a>
+
+<!-- FORM -->
+<h2>Share Your Feelings</h2>
+
+<form onsubmit="saveMessage(event)">
+<textarea id="msg" placeholder="Write your feelings here..."></textarea>
+<br>
+<button class="submit">Send</button>
+</form>
+
+<!-- 🔒 ADMIN DASHBOARD -->
+<div id="adminPanel">
+
+<h3>📊 Owner Dashboard</h3>
+
+<p>Total Visitors:</p>
+<img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor=%23ff2d55" />
+
+<h3>📝 Messages</h3>
+<ul id="messages"></ul>
+
+</div>
+
+<!-- SECRET BUTTON -->
+<button onclick="openAdmin()" style="opacity:0.1;">.</button>
+
+</div>
+
+<script>
+
+/* PASSWORD ACCESS */
+function openAdmin(){
+let pass = prompt("Enter Admin Password");
+
+if(pass === "soulspace123"){
+document.getElementById("adminPanel").style.display = "block";
+loadMessages();
+}else{
+alert("Access Denied");
+}
+}
+
+/* SAVE MESSAGES */
+function saveMessage(e){
+e.preventDefault();
+
+let msg = document.getElementById("msg").value;
+
+if(msg.trim() === "") return;
+
+let messages = JSON.parse(localStorage.getItem("soul_msgs")) || [];
+messages.push(msg);
+
+localStorage.setItem("soul_msgs", JSON.stringify(messages));
+
+document.getElementById("msg").value = "";
+
+alert("Your feelings are received 💚");
+}
+
+/* LOAD MESSAGES */
+function loadMessages(){
+
+let list = document.getElementById("messages");
+list.innerHTML = "";
+
+let messages = JSON.parse(localStorage.getItem("soul_msgs")) || [];
+
+messages.forEach(m => {
+let li = document.createElement("li");
+li.innerText = m;
+list.appendChild(li);
+});
+
+}
+
+</script>
+
+</body>
+</html>
