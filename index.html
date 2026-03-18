@@ -126,13 +126,23 @@ Chat / Book Tickets
 </a>
 
 <!-- FEELINGS -->
-<h2>Share Your Feelings</h2>
+<script>
+function sendToWhatsApp(){
 
-<textarea placeholder="Write your feelings here..."></textarea>
+let message = document.getElementById("msg").value;
 
-<br>
+if(message.trim() === ""){
+alert("Please write something...");
+return;
+}
 
-<button class="submit">Send</button>
+/* 🔥 YOUR WHATSAPP NUMBER */
+let phone = "916380896485";
+
+/* 🔥 AUTO MESSAGE */
+let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent("Hi Soul Space, I want to share this feeling:\n\n" + message);
+}
+</script>
 
 </div>
 
