@@ -1,137 +1,144 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Soul Space Chennai</title>
 
 <style>
 body{
-margin:0;
-font-family:'Segoe UI', sans-serif;
-color:white;
-text-align:center;
-background:#0f0f0f;
+  margin:0;
+  font-family:'Segoe UI', sans-serif;
+  color:white;
+  text-align:center;
+  background:#0f0f0f;
 }
 
 .container{
-padding:25px;
-max-width:750px;
-margin:auto;
+  padding:25px;
+  max-width:750px;
+  margin:auto;
 }
 
 /* LOGO */
 .logo img{
-width:230px;
-max-width:90%;
-margin-top:20px;
-border-radius:15px;
-display:block;
-margin-left:auto;
-margin-right:auto;
+  width:230px;
+  max-width:90%;
+  margin-top:20px;
+  border-radius:15px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
 }
 
 /* TITLE */
 h1{
-font-size:34px;
-margin-top:10px;
+  font-size:34px;
+  margin-top:10px;
 }
 
 /* STORY */
 .story{
-font-size:17px;
-line-height:1.6;
-margin-top:20px;
-opacity:0.9;
+  font-size:17px;
+  line-height:1.6;
+  margin-top:20px;
+  opacity:0.9;
 }
 
 /* POSTER */
 .poster img{
-width:100%;
-max-width:700px;
-border-radius:20px;
-margin-top:25px;
-display:block;
-margin-left:auto;
-margin-right:auto;
-box-shadow:0 10px 40px rgba(0,0,0,0.7);
+  width:100%;
+  max-width:700px;
+  border-radius:20px;
+  margin-top:25px;
+  display:block;
+  margin-left:auto;
+  margin-right:auto;
+  box-shadow:0 10px 40px rgba(0,0,0,0.7);
 }
 
 /* BUTTONS */
 .button{
-display:block;
-margin:15px auto;
-padding:15px;
-width:85%;
-background:#ff2d55;
-color:white;
-text-decoration:none;
-border-radius:30px;
-font-size:17px;
-font-weight:500;
-transition:0.3s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:15px auto;
+  padding:15px;
+  width:85%;
+  background:#ff2d55;
+  color:white;
+  text-decoration:none;
+  border-radius:30px;
+  font-size:17px;
+  font-weight:500;
+  transition:0.3s;
 }
 .button:hover{
-background:#ff4d75;
+  background:#ff4d75;
+}
+
+/* SVG ICONS */
+.button svg{
+  width:24px;
+  height:24px;
+  fill:white;
 }
 
 /* TEXTAREA */
 textarea{
-width:90%;
-height:120px;
-border-radius:12px;
-padding:12px;
-border:none;
-margin-top:15px;
-font-size:14px;
+  width:90%;
+  height:120px;
+  border-radius:12px;
+  padding:12px;
+  border:none;
+  margin-top:15px;
+  font-size:14px;
 }
 
 /* SEND BUTTON */
 .submit{
-margin-top:12px;
-padding:14px 30px;
-border:none;
-border-radius:30px;
-background:#00c853;
-color:white;
-font-size:16px;
-font-weight:bold;
-transition:0.3s;
+  margin-top:12px;
+  padding:14px 30px;
+  border:none;
+  border-radius:30px;
+  background:#00c853;
+  color:white;
+  font-size:16px;
+  font-weight:bold;
+  transition:0.3s;
 }
 .submit:hover{
-background:#00e676;
+  background:#00e676;
 }
 
 /* VISITOR COUNT & QUOTES */
 .visitors{
-margin-top:30px;
-padding:20px;
-background:rgba(255,255,255,0.05);
-border-radius:20px;
-backdrop-filter:blur(10px);
+  margin-top:30px;
+  padding:20px;
+  background:rgba(255,255,255,0.05);
+  border-radius:20px;
+  backdrop-filter:blur(10px);
 }
 
 .visitors p{
-margin-top:12px;
-font-size:16px;
-opacity:0.9;
-line-height:1.5;
+  margin-top:12px;
+  font-size:16px;
+  opacity:0.9;
+  line-height:1.5;
 }
 
 /* CURIOUS QUOTES STYLE */
 .quote{
-font-style:italic;
-color:#ff2d55;
-margin:8px 0;
-transition:0.3s;
+  font-style:italic;
+  color:#ff2d55;
+  margin:8px 0;
+  transition:0.3s;
 }
 .quote:hover{
-color:#ff4d75;
-transform:scale(1.05);
+  color:#ff4d75;
+  transform:scale(1.05);
 }
-
 </style>
-
 </head>
 
 <body>
@@ -140,36 +147,38 @@ transform:scale(1.05);
 
 <!-- LOGO -->
 <div class="logo">
-<img src="logo.png" alt="Soul Space Logo">
+  <img src="logo.png" alt="Soul Space Logo">
 </div>
 
 <h1>🌿 Soul Space Chennai</h1>
 
 <div class="story">
-<p>A safe space where people share feelings without judgement.</p>
-<p>With chai, music and real conversations, every story becomes lighter.</p>
-<p><b>You're not alone anymore. We're here for you.</b></p>
+  <p>A safe space where people share feelings without judgement.</p>
+  <p>With chai, music and real conversations, every story becomes lighter.</p>
+  <p><b>You're not alone anymore. We're here for you.</b></p>
 </div>
 
 <!-- POSTER -->
 <div class="poster">
-<img src="poster.jpg" alt="Soul Space Poster">
+  <img src="poster.jpg" alt="Soul Space Poster">
 </div>
 
-<!-- BUTTONS -->
-<a class="button" href="https://instagram.com/soulspacechennai">
-📸 Follow on Instagram
+<!-- BUTTONS WITH SVG ICONS -->
+<a class="button" href="https://instagram.com/soulspacechennai" target="_blank">
+  <!-- Instagram SVG Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224.1 141c-63.6 0-115.1 51.5-115.1 115.1s51.5 115.1 115.1 115.1 115.1-51.5 115.1-115.1S287.6 141 224.1 141zm0 190c-41.4 0-75-33.6-75-75s33.6-75 75-75 75 33.6 75 75-33.6 75-75 75zm146.4-194.1c0 14.9-12.1 27-27 27s-27-12.1-27-27 12.1-27 27-27 27 12.1 27 27zm76.1 27.2c-1.7-35.7-9.9-67.3-36.2-93.6s-57.9-34.5-93.6-36.2c-37-2.1-147.8-2.1-184.8 0-35.7 1.7-67.3 9.9-93.6 36.2s-34.5 57.9-36.2 93.6c-2.1 37-2.1 147.8 0 184.8 1.7 35.7 9.9 67.3 36.2 93.6s57.9 34.5 93.6 36.2c37 2.1 147.8 2.1 184.8 0 35.7-1.7 67.3-9.9 93.6-36.2s34.5-57.9 36.2-93.6c2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.5-23 34.7-42.5 42.5-29.4 11.7-99.3 9-132.3 9s-102.9 2.6-132.3-9c-19.5-7.8-34.7-23-42.5-42.5-11.7-29.4-9-99.3-9-132.3s-2.6-102.9 9-132.3c7.8-19.5 23-34.7 42.5-42.5 29.4-11.7 99.3-9 132.3-9s102.9-2.6 132.3 9c19.5 7.8 34.7 23 42.5 42.5 11.7 29.4 9 99.3 9 132.3s2.6 102.9-9 132.3z"/></svg>
+  Follow on Instagram
 </a>
 
-<a class="button" href="https://wa.me/916380896485">
-💬 Chat / Book Tickets
+<a class="button" href="https://wa.me/916380896485" target="_blank">
+  <!-- WhatsApp SVG Icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339-10.9 192.7-6.2 143.3 63.8c-22.1 31.1-26.7 68.1-26.7 104.3 0 29.2 8.1 57.8 19.4 84.4l-21.1 77.3 79.8-20.9c26.8 12.2 54.4 19.6 83.1 19.6 36.1 0 71-10 102-26.3 70.2-49.5 74.8-195.5-14.6-247.1zM224 312c-38.6 0-70-31.4-70-70s31.4-70 70-70 70 31.4 70 70-31.4 70-70 70z"/></svg>
+  Chat / Book Tickets
 </a>
 
 <!-- FEELINGS -->
 <h2>💭 Share Your Feelings</h2>
-
 <textarea id="msg" placeholder="Write your feelings here..."></textarea>
-
 <br>
 <button class="submit" onclick="sendToWhatsApp()">Share Your Feelings 💚</button>
 
@@ -177,22 +186,21 @@ transform:scale(1.05);
 <div class="visitors">
 <h3>🌍 Visitors</h3>
 <img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor=%23ff2d55" />
-
 <p class="quote">"What happens when your heart finally speaks?" ✨</p>
 <p class="quote">"Every word shared here finds a heart ready to listen." 💚</p>
 </div>
 
 <script>
 function sendToWhatsApp(){
-let message = document.getElementById("msg").value;
-if(message.trim() === ""){
-alert("Please write something...");
-return;
-}
-let phone = "916380896485";
-let finalMessage = "Hi Soul Space, I want to share this feeling:\n\n" + message;
-let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(finalMessage);
-window.open(url,"_blank");
+  let message = document.getElementById("msg").value;
+  if(message.trim() === ""){
+    alert("Please write something...");
+    return;
+  }
+  let phone = "916380896485";
+  let finalMessage = "Hi Soul Space, I want to share this feeling:\n\n" + message;
+  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(finalMessage);
+  window.open(url,"_blank");
 }
 </script>
 
