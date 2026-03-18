@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Login</title>
+<style>
+body{
+background:black;
+color:white;
+text-align:center;
+font-family:Arial;
+padding-top:100px;
+}
+input{
+padding:10px;
+margin:10px;
+border-radius:10px;
+border:none;
+}
+button{
+padding:10px 20px;
+background:#ff2d55;
+color:white;
+border:none;
+border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🔐 Soul Space Admin</h1>
+
+<input id="raavanayadav07@gmail.com" placeholder="raavanayadav07@gmail.com"><br>
+<input id="Balaji@143" type="Balaji@143" placeholder="Balaji@143"><br>
+
+<button onclick="login()">Login</button>
+
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_ID"
+};
+
+firebase.initializeApp(firebaseConfig);
+
+function login(){
+  const email = document.getElementById("raavanayadav07@gmail.com").value;
+  const pass = document.getElementById("Balaji@143").value;
+
+  firebase.auth().signInWithEmailAndPassword(email, pass)
+  .then(()=>{
+    window.location="dashboard.html";
+  })
+  .catch(()=>alert("Wrong login"));
+}
+</script>
+
+</body>
+</html>
