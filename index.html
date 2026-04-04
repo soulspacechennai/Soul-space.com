@@ -4,70 +4,72 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Soul Space Chennai</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 
 <style>
 body{
   margin:0;
-  font-family:'Segoe UI', sans-serif;
+  font-family:'Poppins', sans-serif;
   color:white;
   text-align:center;
 
-  /* BACKGROUND IMAGE */
-  background: url('https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1600') no-repeat center center/cover;
-  min-height:100vh;
-  position:relative;
+  background: url('https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=1600') no-repeat center center/cover;
 }
 
 /* DARK OVERLAY */
 body::before{
   content:"";
-  position:absolute;
-  top:0;
-  left:0;
+  position:fixed;
   width:100%;
   height:100%;
-  background: rgba(0,0,0,0.65);
-  z-index:0;
+  background:rgba(0,0,0,0.7);
+  z-index:-1;
+}
+
+/* FIXED HEADER (LOGO STAYS) */
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  padding:15px 0;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+}
+
+.header img{
+  width:140px;
 }
 
 /* CONTAINER */
 .container{
-  position:relative;
-  z-index:1;
-
-  padding:30px;
+  margin-top:120px;
+  padding:25px;
   max-width:750px;
-  margin:40px auto;
+  margin-left:auto;
+  margin-right:auto;
 
-  background: rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.06);
   border-radius:25px;
-
   backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-
   border:1px solid rgba(255,255,255,0.15);
-  box-shadow:0 25px 70px rgba(0,0,0,0.7);
+  box-shadow:0 25px 60px rgba(0,0,0,0.7);
 }
 
-/* LOGO */
-.logo img{
-  width:200px;
-  border-radius:15px;
-  margin-top:10px;
-}
-
-/* TITLE */
+/* TITLE - ONE LINE */
 h1{
-  font-size:34px;
-  margin:10px 0;
+  font-size:32px;
+  font-weight:600;
+  letter-spacing:1px;
+  margin-bottom:10px;
 }
 
 /* STORY */
 .story{
-  font-size:17px;
+  font-size:16px;
   line-height:1.7;
-  opacity:0.95;
+  opacity:0.9;
 }
 
 /* POSTER */
@@ -75,30 +77,26 @@ h1{
   width:100%;
   border-radius:20px;
   margin-top:20px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.6);
 }
 
-/* BUTTONS */
+/* BUTTON */
 .button{
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   gap:10px;
 
   margin:15px auto;
-  padding:15px;
+  padding:14px;
   width:85%;
 
-  background: linear-gradient(135deg, #ff2d55, #ff6a88);
-  color:white;
-  text-decoration:none;
-
+  background: linear-gradient(135deg,#ff2d55,#ff6a88);
   border-radius:30px;
-  font-size:17px;
-  font-weight:500;
+  text-decoration:none;
+  color:white;
 
+  font-weight:500;
   transition:0.3s;
-  box-shadow:0 10px 30px rgba(255,45,85,0.4);
 }
 .button:hover{
   transform:scale(1.05);
@@ -112,65 +110,48 @@ textarea{
   padding:12px;
   border:none;
   margin-top:15px;
-  font-size:14px;
 
-  background: rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.1);
   color:white;
-  outline:none;
 }
 
-/* SUBMIT BUTTON */
+/* SUBMIT */
 .submit{
   margin-top:12px;
   padding:14px 30px;
   border:none;
   border-radius:30px;
 
-  background: linear-gradient(135deg, #00c853, #69f0ae);
+  background:linear-gradient(135deg,#00c853,#69f0ae);
   color:white;
-
-  font-size:16px;
   font-weight:bold;
-
-  transition:0.3s;
-  box-shadow:0 10px 30px rgba(0,200,83,0.4);
-}
-.submit:hover{
-  transform:scale(1.05);
 }
 
-/* VISITORS */
-.visitors{
-  margin-top:30px;
-  padding:20px;
-
-  background: rgba(255,255,255,0.05);
-  border-radius:20px;
-  backdrop-filter:blur(10px);
+/* WALL */
+.wall{
+  margin-top:25px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
 }
 
-/* QUOTES */
-.quote{
-  font-style:italic;
-  color:#ff6a88;
-  font-size:15px;
-  margin:6px 0;
-  display:block;
-  transition:0.3s;
-}
-.quote:hover{
-  transform:scale(1.05);
+.card{
+  background:rgba(255,255,255,0.08);
+  padding:15px;
+  border-radius:15px;
+  text-align:left;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
-<div class="logo">
-  <img src="logo.png" alt="Logo">
+<!-- FIXED LOGO -->
+<div class="header">
+  <img src="logo.png">
 </div>
+
+<div class="container">
 
 <h1>🌿 Soul Space Chennai</h1>
 
@@ -181,50 +162,59 @@ textarea{
 </div>
 
 <div class="poster">
-  <img src="poster.jpg" alt="Poster">
+  <img src="poster.jpg">
 </div>
 
-<a class="button" href="https://instagram.com/soulspacechennai" target="_blank">
+<a class="button" href="https://instagram.com/soulspacechennai">
   <i class="fab fa-instagram"></i> Follow on Instagram
 </a>
 
-<a class="button" href="https://wa.me/916380896485" target="_blank">
+<a class="button" href="https://wa.me/916380896485">
   <i class="fab fa-whatsapp"></i> Chat / Book Tickets
 </a>
 
 <h2>💭 Share Your Feelings</h2>
 
-<textarea id="msg" placeholder="Write your feelings here..."></textarea>
+<textarea id="msg" placeholder="Write your feelings..."></textarea>
 <br>
 
-<button class="submit" onclick="sendToWhatsApp()">Share Your Feelings 💚</button>
+<button class="submit" onclick="sendMessage()">Share 💚</button>
 
-<div class="visitors">
-  <h3>🌍 Visitors</h3>
-
-  <img src="https://api.visitorbadge.io/api/visitors?path=soulspacechennai&label=Visitors&countColor=%23ff2d55" />
-
-  <span class="quote">"What happens when your heart finally speaks?" ✨</span>
-  <span class="quote">"Every word shared here finds a heart ready to listen." 💚</span>
-</div>
+<h2>💬 Shared Feelings</h2>
+<div id="wall" class="wall"></div>
 
 </div>
 
 <script>
-function sendToWhatsApp(){
+let wall = document.getElementById("wall");
+
+window.onload = function(){
+  let saved = JSON.parse(localStorage.getItem("feelings")) || [];
+  saved.forEach(addToWall);
+};
+
+function sendMessage(){
   let message = document.getElementById("msg").value;
 
   if(message.trim() === ""){
-    alert("Please write something...");
+    alert("Write something...");
     return;
   }
 
-  let phone = "916380896485";
-  let finalMessage = "Hi Soul Space, I want to share this feeling:\n\n" + message;
+  let saved = JSON.parse(localStorage.getItem("feelings")) || [];
+  saved.push(message);
+  localStorage.setItem("feelings", JSON.stringify(saved));
 
-  let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(finalMessage);
+  addToWall(message);
+  document.getElementById("msg").value="";
+}
 
-  window.open(url,"_blank");
+function addToWall(text){
+  let div = document.createElement("div");
+  div.className="card";
+  div.innerText=text;
+
+  wall.prepend(div);
 }
 </script>
 
