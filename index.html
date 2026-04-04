@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Soul Space Chennai™</title>
+<title>Soul Space Chennai</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
@@ -28,129 +28,138 @@ background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 display:flex;
 justify-content:center;
 align-items:center;
-padding:30px;
+padding:20px;
 }
-
-/* CONTAINER */
 
 .container{
 background: rgba(255,255,255,0.08);
 backdrop-filter: blur(15px);
-border-radius:25px;
-padding:40px 25px;
-max-width:700px;
+border-radius:20px;
+padding:30px 20px;
+max-width:650px;
 width:100%;
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
-
-/* LOGO */
 
 .logo{
-width:180px;
-margin-bottom:20px;
+width:170px;
+margin-bottom:15px;
 }
 
-/* TEXT */
-
 .tagline{
-font-size:12px;
+font-size:11px;
 letter-spacing:2px;
 opacity:0.7;
-margin-bottom:10px;
+margin-bottom:8px;
 }
 
 h1{
-font-size:34px;
+font-size:clamp(24px, 5vw, 32px);
 font-weight:600;
-margin-bottom:10px;
-white-space:nowrap;
+margin-bottom:8px;
+line-height:1.2;
+word-break:break-word;
+}
+
+.tm{
+font-size:12px;
+vertical-align:super;
 }
 
 .subtitle{
-font-size:16px;
+font-size:15px;
 opacity:0.85;
-margin-bottom:20px;
+margin-bottom:15px;
 }
 
 .description{
-line-height:1.7;
-font-size:15px;
+line-height:1.6;
+font-size:14px;
 opacity:0.9;
 }
 
-/* BUTTON */
+/* BUTTONS */
 
 .button{
 display:block;
-margin:20px auto;
-padding:14px;
+margin:12px auto;
+padding:13px;
 width:85%;
-border-radius:30px;
+border-radius:25px;
 text-decoration:none;
 color:white;
-font-size:15px;
-background:linear-gradient(135deg,#ff2d55,#ff6a88);
+font-size:14px;
+}
+
+/* WhatsApp */
+.whatsapp{
+background:linear-gradient(135deg,#25D366,#1ebe5d);
+}
+
+/* Instagram */
+.instagram{
+background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
 }
 
 /* FEELINGS BOX */
 
 .feelings-box{
-margin-top:30px;
+margin-top:25px;
 text-align:left;
+}
+
+.feelings-box h3{
+font-size:15px;
+margin-bottom:8px;
+font-weight:500;
 }
 
 textarea{
 width:100%;
-height:120px;
-border-radius:15px;
+height:110px;
+border-radius:12px;
 border:none;
-padding:12px;
+padding:10px;
 font-family:'Poppins';
 resize:none;
 outline:none;
 }
 
 .submit-btn{
-margin-top:10px;
+margin-top:8px;
 width:100%;
-padding:12px;
+padding:11px;
 border:none;
-border-radius:25px;
+border-radius:20px;
 background:#ffffff;
 color:#333;
 font-weight:500;
 cursor:pointer;
 }
 
-/* TRUST */
-
 .trust{
-margin-top:10px;
-font-size:12px;
+margin-top:6px;
+font-size:11px;
 opacity:0.7;
 }
 
-/* LEGAL BOX */
-
 .legal{
-margin-top:20px;
-font-size:11px;
+margin-top:15px;
+font-size:10px;
 opacity:0.6;
-line-height:1.5;
+line-height:1.4;
 }
 
-/* FOOTER */
-
 .footer{
-margin-top:25px;
-font-size:13px;
+margin-top:18px;
+font-size:12px;
 opacity:0.8;
 }
 
 .footer a{
 color:white;
 text-decoration:none;
-margin:0 10px;
+margin:0 8px;
 }
 
 </style>
@@ -164,7 +173,9 @@ margin:0 10px;
 
 <div class="tagline">WHAT IS SOUL SPACE?</div>
 
-<h1>Soul Space Chennai™</h1>
+<h1>
+Soul Space Chennai<span class="tm">™</span>
+</h1>
 
 <p class="subtitle">
 A place where you don’t have to pretend.
@@ -177,8 +188,14 @@ A place where you don’t have to pretend.
 <p><b>You are not alone anymore.</b></p>
 </div>
 
-<a class="button" href="https://wa.me/916380896485">
+<!-- BUTTONS -->
+
+<a class="button whatsapp" href="https://wa.me/916380896485">
 Chat / Book on WhatsApp
+</a>
+
+<a class="button instagram" href="https://instagram.com/soulspacechennai">
+Follow on Instagram
 </a>
 
 <!-- FEELINGS BOX -->
@@ -187,29 +204,25 @@ Chat / Book on WhatsApp
 
 <h3>Share what you're feeling… 🤍</h3>
 
-<textarea placeholder="You can share anything — emotions, thoughts, or what you're going through..."></textarea>
+<textarea placeholder="You can share anything you're going through..."></textarea>
 
 <button class="submit-btn">Send</button>
 
 <div class="trust">
-🔒 Your feelings are respected. This is a safe emotional space.
+🔒 Safe space. Your feelings matter.
 </div>
 
 </div>
 
-<!-- LEGAL + TRUST -->
+<!-- LEGAL -->
 
 <div class="legal">
-
 <p>
-Soul Space Chennai™ is a community-driven emotional support space.  
-We do not provide medical or psychological treatment.
+Soul Space Chennai™ is a community support space and not a medical or therapy service.
 </p>
-
 <p>
-By using this platform, you agree to maintain respect, privacy, and a safe environment for everyone.
+By using this platform, you agree to maintain respect and privacy.
 </p>
-
 </div>
 
 <!-- FOOTER -->
@@ -217,11 +230,10 @@ By using this platform, you agree to maintain respect, privacy, and a safe envir
 <div class="footer">
 
 <a href="contact.html">Contact</a> |
-
 <a href="terms.html">Terms</a>
 
-<p style="margin-top:10px;">
-© 2026 Soul Space Chennai™. All rights reserved.
+<p style="margin-top:8px;">
+© 2026 Soul Space Chennai™
 </p>
 
 </div>
