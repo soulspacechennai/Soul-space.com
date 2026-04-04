@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +14,7 @@ body{
   font-family:'Poppins',sans-serif;
   color:white;
   text-align:center;
-  background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600') no-repeat center/cover;
-  min-height:100vh;
+  background:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1600') no-repeat center/cover;
 }
 
 /* DARK OVERLAY */
@@ -33,29 +32,28 @@ body::before{
   position:fixed;
   top:0;
   width:100%;
-  padding:12px 0;
-  z-index:1000;
+  padding:15px 0;
 }
 
 .header img{
-  width:170px;
+  width:200px; /* medium logo */
 }
 
-/* NAVIGATION */
+/* NAV */
 .nav{
   margin-top:8px;
 }
 .nav a{
   color:white;
-  margin:0 12px;
+  margin:0 15px;
   text-decoration:none;
   font-size:14px;
   opacity:0.8;
 }
 
-/* MAIN CONTAINER */
+/* CONTAINER */
 .container{
-  margin-top:160px;
+  margin-top:170px;
   padding:30px;
   max-width:750px;
   margin-left:auto;
@@ -66,7 +64,7 @@ body::before{
   backdrop-filter:blur(15px);
 }
 
-/* TAGLINE */
+/* TEXT */
 .tagline{
   font-size:12px;
   letter-spacing:2px;
@@ -74,7 +72,6 @@ body::before{
   opacity:0.7;
 }
 
-/* TITLE */
 .main-title{
   font-size:34px;
   font-weight:600;
@@ -82,48 +79,43 @@ body::before{
   white-space:nowrap;
 }
 
-/* SUBTITLE */
 .subtitle{
   font-size:15px;
   opacity:0.85;
-  margin-bottom:20px;
 }
 
-/* STORY */
 .story{
+  margin-top:15px;
   line-height:1.7;
   font-size:15px;
-  opacity:0.9;
 }
 
-/* IMAGE */
-.poster{
-  width:100%;
-  border-radius:20px;
-  margin-top:20px;
-}
-
-/* BUTTONS */
+/* BUTTON */
 .button{
   display:flex;
   justify-content:center;
   align-items:center;
   gap:10px;
-  margin:15px auto;
+  margin:12px auto;
   padding:14px;
   width:85%;
   background:linear-gradient(135deg,#ff2d55,#ff6a88);
   border-radius:30px;
   text-decoration:none;
   color:white;
-  font-size:15px;
 }
 
-/* FOOTER */
-.footer{
-  margin-top:30px;
+/* FOOTER LINKS */
+.footer-links{
+  margin-top:25px;
+}
+
+.footer-links a{
+  color:white;
+  margin:0 10px;
   font-size:13px;
   opacity:0.7;
+  text-decoration:none;
 }
 
 </style>
@@ -131,27 +123,22 @@ body::before{
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
-  <img src="logo.png" alt="Soul Space Logo">
+  <img src="logo.png">
 
   <div class="nav">
-    <a href="index.html">Home</a>
     <a href="contact.html">Contact</a>
     <a href="terms.html">Terms</a>
   </div>
 </div>
 
-<!-- MAIN -->
 <div class="container">
 
   <div class="tagline">What is Soul Space?</div>
 
   <h1 class="main-title">Soul Space Chennai</h1>
 
-  <p class="subtitle">
-    A place where you don’t have to pretend.
-  </p>
+  <p class="subtitle">A place where you don’t have to pretend.</p>
 
   <div class="story">
     <p>People walk around smiling… but inside, they carry so much.</p>
@@ -160,18 +147,13 @@ body::before{
     <p><b>You’re not alone anymore.</b></p>
   </div>
 
-  <img src="poster.jpg" class="poster">
-
-  <a class="button" href="https://instagram.com/soulspacechennai">
-    <i class="fab fa-instagram"></i> Follow on Instagram
-  </a>
-
   <a class="button" href="https://wa.me/916380896485">
-    <i class="fab fa-whatsapp"></i> Book Your Spot
+    <i class="fab fa-whatsapp"></i> Book / Chat Now
   </a>
 
-  <div class="footer">
-    © 2026 Soul Space Chennai
+  <div class="footer-links">
+    <a href="contact.html">Contact Us</a>
+    <a href="terms.html">Terms & Conditions</a>
   </div>
 
 </div>
