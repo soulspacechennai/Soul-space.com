@@ -1,121 +1,156 @@
   <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soul Space Chennai</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Soul Space Chennai™</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  color:white;
-  text-align:center;
-  background:url('https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?q=80&w=1600') no-repeat center/cover;
-}
+font-family:'Poppins',sans-serif;
+color:white;
+text-align:center;
+min-height:100vh;
 
-/* DARK OVERLAY */
-body::before{
-  content:"";
-  position:fixed;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,0.65);
-  z-index:-1;
-}
+background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
 
-/* HEADER */
-.header{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:15px 0;
-}
-
-.header img{
-  width:200px; /* medium logo */
-}
-
-/* NAV */
-.nav{
-  margin-top:8px;
-}
-.nav a{
-  color:white;
-  margin:0 15px;
-  text-decoration:none;
-  font-size:14px;
-  opacity:0.8;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
 }
 
 /* CONTAINER */
-.container{
-  margin-top:170px;
-  padding:30px;
-  max-width:750px;
-  margin-left:auto;
-  margin-right:auto;
 
-  background:rgba(255,255,255,0.08);
-  border-radius:25px;
-  backdrop-filter:blur(15px);
+.container{
+background: rgba(255,255,255,0.08);
+backdrop-filter: blur(15px);
+border-radius:25px;
+padding:40px 25px;
+max-width:700px;
+width:100%;
+box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* LOGO */
+
+.logo{
+width:180px;
+margin-bottom:20px;
 }
 
 /* TEXT */
+
 .tagline{
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  opacity:0.7;
+font-size:12px;
+letter-spacing:2px;
+opacity:0.7;
+margin-bottom:10px;
 }
 
-.main-title{
-  font-size:34px;
-  font-weight:600;
-  margin:10px 0;
-  white-space:nowrap;
+h1{
+font-size:34px;
+font-weight:600;
+margin-bottom:10px;
+white-space:nowrap;
 }
 
 .subtitle{
-  font-size:15px;
-  opacity:0.85;
+font-size:16px;
+opacity:0.85;
+margin-bottom:20px;
 }
 
-.story{
-  margin-top:15px;
-  line-height:1.7;
-  font-size:15px;
+.description{
+line-height:1.7;
+font-size:15px;
+opacity:0.9;
 }
 
 /* BUTTON */
+
 .button{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap:10px;
-  margin:12px auto;
-  padding:14px;
-  width:85%;
-  background:linear-gradient(135deg,#ff2d55,#ff6a88);
-  border-radius:30px;
-  text-decoration:none;
-  color:white;
+display:block;
+margin:20px auto;
+padding:14px;
+width:85%;
+border-radius:30px;
+text-decoration:none;
+color:white;
+font-size:15px;
+background:linear-gradient(135deg,#ff2d55,#ff6a88);
 }
 
-/* FOOTER LINKS */
-.footer-links{
-  margin-top:25px;
+/* FEELINGS BOX */
+
+.feelings-box{
+margin-top:30px;
+text-align:left;
 }
 
-.footer-links a{
-  color:white;
-  margin:0 10px;
-  font-size:13px;
-  opacity:0.7;
-  text-decoration:none;
+textarea{
+width:100%;
+height:120px;
+border-radius:15px;
+border:none;
+padding:12px;
+font-family:'Poppins';
+resize:none;
+outline:none;
+}
+
+.submit-btn{
+margin-top:10px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:25px;
+background:#ffffff;
+color:#333;
+font-weight:500;
+cursor:pointer;
+}
+
+/* TRUST */
+
+.trust{
+margin-top:10px;
+font-size:12px;
+opacity:0.7;
+}
+
+/* LEGAL BOX */
+
+.legal{
+margin-top:20px;
+font-size:11px;
+opacity:0.6;
+line-height:1.5;
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:25px;
+font-size:13px;
+opacity:0.8;
+}
+
+.footer a{
+color:white;
+text-decoration:none;
+margin:0 10px;
 }
 
 </style>
@@ -123,38 +158,73 @@ body::before{
 
 <body>
 
-<div class="header">
-  <img src="logo.png">
-
-  <div class="nav">
-    <a href="contact.html">Contact</a>
-    <a href="terms.html">Terms</a>
-  </div>
-</div>
-
 <div class="container">
 
-  <div class="tagline">What is Soul Space?</div>
+<img src="logo.png" class="logo">
 
-  <h1 class="main-title">Soul Space Chennai</h1>
+<div class="tagline">WHAT IS SOUL SPACE?</div>
 
-  <p class="subtitle">A place where you don’t have to pretend.</p>
+<h1>Soul Space Chennai™</h1>
 
-  <div class="story">
-    <p>People walk around smiling… but inside, they carry so much.</p>
-    <p>Soul Space is where those feelings finally get a voice.</p>
-    <p>With chai, music, and real conversations — we listen, we feel, we heal.</p>
-    <p><b>You’re not alone anymore.</b></p>
-  </div>
+<p class="subtitle">
+A place where you don’t have to pretend.
+</p>
 
-  <a class="button" href="https://wa.me/916380896485">
-    <i class="fab fa-whatsapp"></i> Book / Chat Now
-  </a>
+<div class="description">
+<p>People walk around smiling…</p>
+<p>But inside they carry pain, memories, and emotions.</p>
+<p>Soul Space is where those feelings finally get a voice.</p>
+<p><b>You are not alone anymore.</b></p>
+</div>
 
-  <div class="footer-links">
-    <a href="contact.html">Contact Us</a>
-    <a href="terms.html">Terms & Conditions</a>
-  </div>
+<a class="button" href="https://wa.me/916380896485">
+Chat / Book on WhatsApp
+</a>
+
+<!-- FEELINGS BOX -->
+
+<div class="feelings-box">
+
+<h3>Share what you're feeling… 🤍</h3>
+
+<textarea placeholder="You can share anything — emotions, thoughts, or what you're going through..."></textarea>
+
+<button class="submit-btn">Send</button>
+
+<div class="trust">
+🔒 Your feelings are respected. This is a safe emotional space.
+</div>
+
+</div>
+
+<!-- LEGAL + TRUST -->
+
+<div class="legal">
+
+<p>
+Soul Space Chennai™ is a community-driven emotional support space.  
+We do not provide medical or psychological treatment.
+</p>
+
+<p>
+By using this platform, you agree to maintain respect, privacy, and a safe environment for everyone.
+</p>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<a href="contact.html">Contact</a> |
+
+<a href="terms.html">Terms</a>
+
+<p style="margin-top:10px;">
+© 2026 Soul Space Chennai™. All rights reserved.
+</p>
+
+</div>
 
 </div>
 
