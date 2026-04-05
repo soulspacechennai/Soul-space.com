@@ -1,43 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact - Soul Space</title>
+<title>Contact - Soul Space Chennai</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
 font-family:'Poppins',sans-serif;
 background:
-radial-gradient(circle at 10% 20%, rgba(255,255,255,0.08), transparent 40%),
-radial-gradient(circle at 90% 80%, rgba(255,255,255,0.06), transparent 40%),
-linear-gradient(135deg,#0f2027,#203a43,#2c5364,#1a2a2f);
+radial-gradient(circle at 15% 20%, rgba(255,255,255,0.05), transparent 40%),
+radial-gradient(circle at 85% 80%, rgba(255,255,255,0.04), transparent 40%),
+linear-gradient(135deg,#0b1d26,#162d35,#1f3c45,#0f2027);
 color:white;
+min-height:100vh;
 text-align:center;
-padding:120px 20px;
 }
 
+/* LOGO */
+.logo-container{
+position:fixed;
+top:20px;
+left:50%;
+transform:translateX(-50%);
+}
+
+.logo{
+width:150px;
+}
+
+/* MAIN */
+.main{
+padding:140px 20px 40px;
+}
+
+/* TEXT */
+.text{
+font-size:15px;
+line-height:1.8;
+color:#e6f0f2;
+margin-bottom:20px;
+}
+
+/* BUTTONS */
 .btn{
 display:block;
 width:100%;
 padding:14px;
-margin-top:15px;
+margin-top:14px;
 border-radius:25px;
 text-decoration:none;
 color:white;
+font-size:14px;
 }
 
 .wa{background:#25D366;}
 .ig{background:#E1306C;}
+
+/* FOOTER */
+.footer{
+margin-top:40px;
+font-size:13px;
+}
+
+.footer a{
+color:white;
+text-decoration:none;
+margin:0 6px;
+}
 </style>
 </head>
 
 <body>
 
-<h2>Reach Us</h2>
+<div class="logo-container">
+<img src="logo.png" class="logo">
+</div>
 
-<a href="https://wa.me/916380896485?text=Hey Soul Space, I want to connect" class="btn wa">WhatsApp</a>
+<div class="main">
 
-<a href="https://instagram.com/soulspacechennai" class="btn ig">Instagram</a>
+<div class="text">
+You don’t have to figure everything out alone.  
+Reach out… whenever you feel ready.
+</div>
+
+<a href="https://wa.me/916380896485?text=Hey Soul Space, I want to connect" class="btn wa">
+Message on WhatsApp
+</a>
+
+<a href="https://instagram.com/soulspacechennai" class="btn ig">
+Open Instagram
+</a>
+
+<div class="footer">
+© 2026 Soul Space Chennai. All rights reserved <br><br>
+<a href="index.html">Home</a> |
+<a href="terms.html">Terms</a>
+</div>
+
+</div>
 
 </body>
 </html>
