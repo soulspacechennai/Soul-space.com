@@ -17,49 +17,53 @@ radial-gradient(circle at 85% 80%, rgba(255,255,255,0.04), transparent 40%),
 linear-gradient(135deg,#0b1d26,#162d35,#1f3c45,#0f2027);
 color:white;
 min-height:100vh;
+overflow-x:hidden;
 }
 
-/* LOGO */
-.logo-container{
-position:fixed;
-top:20px;
-left:50%;
-transform:translateX(-50%);
-z-index:1000;
-}
-
+/* TOP LOGO */
 .logo{
-width:150px;
+width:140px;
+display:block;
+margin:20px auto 10px;
 }
 
 /* MAIN */
 .main{
-padding:140px 18px 40px;
+padding:10px 18px 40px;
 text-align:center;
 }
 
-/* TEXT */
-.text{
-font-size:15px;
+/* BIG TEXT */
+.big{
+font-size:18px;
 line-height:1.9;
-color:#e6f0f2;
-margin-bottom:16px;
+margin-bottom:14px;
+color:#f0f7f9;
+}
+
+/* GLASS SECTION (LIGHT) */
+.glass{
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(10px);
+border-radius:14px;
+padding:16px;
+margin-top:18px;
 }
 
 /* TEXTAREA */
 textarea{
 width:100%;
 height:100px;
-margin-top:12px;
+margin-top:10px;
 padding:12px;
 border:none;
 border-radius:10px;
 font-size:14px;
 }
 
-/* SEND BUTTON */
+/* BUTTON */
 .send{
-margin-top:12px;
+margin-top:10px;
 width:100%;
 padding:12px;
 border:none;
@@ -68,7 +72,7 @@ background:white;
 color:black;
 }
 
-/* BUTTONS */
+/* SOCIAL */
 .btn{
 display:block;
 width:100%;
@@ -87,7 +91,6 @@ font-size:14px;
 .footer{
 margin-top:30px;
 font-size:13px;
-text-align:center;
 }
 
 .footer a{
@@ -100,79 +103,23 @@ margin:0 6px;
 
 <body>
 
-<!-- LOGO -->
-<div class="logo-container">
 <img src="logo.png" class="logo">
-</div>
 
 <div class="main">
 
-<!-- STORY -->
-<div class="text">
-Soul Space is not something you attend.  
-It’s something you feel.
-</div>
+<div class="big">Soul Space is not something you attend. It’s something you feel.</div>
+<div class="big">In a world where everyone is trying to explain themselves… this is where you don’t have to.</div>
+<div class="big">You can meet people who understand you even without words.</div>
+<div class="big">Small gatherings of 18–20 people. Real presence.</div>
+<div class="big">Music, silence, and moments that stay with you.</div>
+<div class="big">No pressure. No pretending. Just being real… is enough.</div>
 
-<div class="text">
-In a world where everyone is trying to explain themselves…  
-this is where you don’t have to.
-</div>
-
-<div class="text">
-You can meet people who understand you  
-even without words.
-</div>
-
-<div class="text">
-Small gatherings of 18–20 people.  
-Quiet conversations. Real presence.
-</div>
-
-<div class="text">
-Music jam sessions, shared silence,  
-and moments that stay with you.
-</div>
-
-<div class="text">
-No pressure. No pretending.  
-Just being real… is enough.
-</div>
-
-<!-- MESSAGE -->
-<div class="text">
-Somewhere inside you…  
-there’s something you haven’t said.  
-You can leave it here. 🤍
-</div>
+<div class="glass">
+<p>Somewhere inside you… there’s something you haven’t said. You can leave it here.</p>
 
 <textarea id="msg" placeholder="Type what you're feeling…"></textarea>
 
 <button class="send" onclick="sendMsg()">Send</button>
-
-<!-- SOCIAL -->
-<a href="https://wa.me/916380896485" class="btn wa">Chat on WhatsApp</a>
-<a href="https://instagram.com/soulspacechennai" class="btn ig">Follow on Instagram</a>
-
-<!-- FOOTER -->
-<div class="footer">
-© 2026 Soul Space Chennai. All rights reserved <br><br>
-<a href="terms.html">Terms</a> |
-<a href="contact.html">Contact</a>
 </div>
 
-</div>
-
-<script>
-function sendMsg(){
-let message = document.getElementById("msg").value;
-
-let finalMsg = "Hey Soul Space, I want to share this:\n\n" + message;
-
-let url = "https://wa.me/916380896485?text=" + encodeURIComponent(finalMsg);
-
-window.open(url, "_blank");
-}
-</script>
-
-</body>
-</html>
+<a href="https
