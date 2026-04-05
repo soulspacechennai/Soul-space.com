@@ -12,9 +12,9 @@
 body{
 font-family:'Poppins',sans-serif;
 background:
-radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 40%),
-radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05), transparent 40%),
-linear-gradient(135deg,#0f2027,#1c3a42,#2c5364);
+radial-gradient(circle at 15% 20%, rgba(255,255,255,0.05), transparent 40%),
+radial-gradient(circle at 85% 80%, rgba(255,255,255,0.04), transparent 40%),
+linear-gradient(135deg,#0b1d26,#162d35,#1f3c45,#0f2027);
 color:white;
 min-height:100vh;
 }
@@ -22,70 +22,42 @@ min-height:100vh;
 /* LOGO */
 .logo-container{
 position:fixed;
-top:18px;
+top:20px;
 left:50%;
 transform:translateX(-50%);
 z-index:1000;
 }
 
 .logo{
-width:130px;
+width:150px;
 }
 
 /* MAIN */
 .main{
-padding:130px 16px 30px;
+padding:140px 18px 40px;
 text-align:center;
 }
 
-.title{
-font-size:22px;
-margin-bottom:8px;
-}
-
-.desc{
-font-size:14px;
-line-height:1.6;
+/* TEXT */
+.text{
+font-size:15px;
+line-height:1.9;
 color:#e6f0f2;
 margin-bottom:16px;
-}
-
-/* BUTTONS */
-.btn{
-display:block;
-width:100%;
-padding:14px;
-margin-top:12px;
-border-radius:25px;
-text-decoration:none;
-color:white;
-font-size:14px;
-}
-
-.wa{background:#25D366;}
-.ig{background:#E1306C;}
-
-/* CARD */
-.card{
-margin-top:22px;
-padding:16px;
-background: rgba(255,255,255,0.07);
-border-radius:16px;
-backdrop-filter: blur(10px);
 }
 
 /* TEXTAREA */
 textarea{
 width:100%;
 height:100px;
-margin-top:10px;
+margin-top:12px;
 padding:12px;
 border:none;
-border-radius:12px;
+border-radius:10px;
 font-size:14px;
 }
 
-/* SEND */
+/* SEND BUTTON */
 .send{
 margin-top:12px;
 width:100%;
@@ -96,26 +68,20 @@ background:white;
 color:black;
 }
 
-/* STORY + JAM */
-.section{
-margin-top:28px;
-padding:18px;
-background: rgba(255,255,255,0.05);
-border-radius:16px;
-text-align:left;
-}
-
-.section h2{
-text-align:center;
-margin-bottom:12px;
-}
-
-.section p{
+/* BUTTONS */
+.btn{
+display:block;
+width:100%;
+padding:14px;
+margin-top:14px;
+border-radius:25px;
+text-decoration:none;
+color:white;
 font-size:14px;
-line-height:1.8;
-color:#e6f0f2;
-margin-bottom:12px;
 }
+
+.wa{background:#25D366;}
+.ig{background:#E1306C;}
 
 /* FOOTER */
 .footer{
@@ -134,107 +100,64 @@ margin:0 6px;
 
 <body>
 
+<!-- LOGO -->
 <div class="logo-container">
 <img src="logo.png" class="logo">
 </div>
 
 <div class="main">
 
-<div class="title">Soul Space Chennai</div>
-
-<div class="desc">
-Not everything needs to be said to be understood.
+<!-- STORY -->
+<div class="text">
+Soul Space is not something you attend.  
+It’s something you feel.
 </div>
 
+<div class="text">
+In a world where everyone is trying to explain themselves…  
+this is where you don’t have to.
+</div>
+
+<div class="text">
+You can meet people who understand you  
+even without words.
+</div>
+
+<div class="text">
+Small gatherings of 18–20 people.  
+Quiet conversations. Real presence.
+</div>
+
+<div class="text">
+Music jam sessions, shared silence,  
+and moments that stay with you.
+</div>
+
+<div class="text">
+No pressure. No pretending.  
+Just being real… is enough.
+</div>
+
+<!-- MESSAGE -->
+<div class="text">
+Somewhere inside you…  
+there’s something you haven’t said.  
+You can leave it here. 🤍
+</div>
+
+<textarea id="msg" placeholder="Type what you're feeling…"></textarea>
+
+<button class="send" onclick="sendMsg()">Send</button>
+
+<!-- SOCIAL -->
 <a href="https://wa.me/916380896485" class="btn wa">Chat on WhatsApp</a>
 <a href="https://instagram.com/soulspacechennai" class="btn ig">Follow on Instagram</a>
 
-<!-- EMOTIONAL BOX -->
-<div class="card">
-<p>
-Somewhere inside you…  
-there’s something you haven’t said to anyone.  
-You can say it here. 🤍
-</p>
-
-<textarea id="msg" placeholder="Type what you're feeling… no judgment, no pressure..."></textarea>
-
-<button class="send" onclick="sendMsg()">Send</button>
-</div>
-
-<!-- STORY -->
-<div class="section">
-<h2>What is Soul Space?</h2>
-
-<p>
-Soul Space is not something you attend.  
-It’s something you feel.
-</p>
-
-<p>
-It’s a space where you can exist without pretending.
-</p>
-
-<p>
-In a world where everyone is trying to explain themselves…  
-this is where you don’t have to.
-</p>
-
-<p>
-You can meet people who understand you  
-even without words.
-</p>
-
-<p>
-No pressure to speak.  
-No need to impress.  
-No need to be anything other than real.
-</p>
-
-<p>
-Sometimes… being seen is enough.  
-Sometimes… being felt is enough.
-</p>
-
-<p>
-That’s what Soul Space is.
-</p>
-</div>
-
-<!-- MUSIC JAM SECTION -->
-<div class="section">
-<h2>Music Jam</h2>
-
-<p>
-Not everything needs words.  
-Some feelings just want sound.
-</p>
-
-<p>
-In Soul Space, music becomes another way to express  
-what you can’t explain.
-</p>
-
-<p>
-A soft hum… a guitar string…  
-or just sitting in silence while someone plays.
-</p>
-
-<p>
-No performance.  
-No judgment.  
-Just presence.
-</p>
-
-<p>
-Sometimes… music says what the heart cannot.
-</p>
-</div>
-
+<!-- FOOTER -->
 <div class="footer">
 © 2026 Soul Space Chennai. All rights reserved <br><br>
-<a href="contact.html">Contact</a> |
-<a href="terms.html">Terms</a>
+<a href="terms.html">Terms</a> |
+<a href="contact.html">Contact</a>
 </div>
 
 </div>
