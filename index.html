@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Soul Space Chennai</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,22 +11,12 @@
 
 body{
 font-family:'Poppins',sans-serif;
-background: radial-gradient(circle at top left,#1b2a2f,#0f2027 40%),
-            radial-gradient(circle at bottom right,#2c5364,#0f2027 60%);
+background:
+radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08), transparent 40%),
+radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05), transparent 40%),
+linear-gradient(135deg,#0f2027,#1c3a42,#2c5364);
 color:white;
 min-height:100vh;
-}
-
-/* SOFT LIGHT GLOW */
-body::before{
-content:"";
-position:fixed;
-width:100%;
-height:100%;
-background:
-radial-gradient(circle at 20% 30%, rgba(255,255,255,0.06), transparent 40%),
-radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05), transparent 40%);
-z-index:-1;
 }
 
 /* LOGO */
@@ -41,7 +29,7 @@ z-index:1000;
 }
 
 .logo{
-width:130px; /* PERFECT MEDIUM SIZE */
+width:130px;
 }
 
 /* MAIN */
@@ -50,10 +38,9 @@ padding:130px 16px 30px;
 text-align:center;
 }
 
-/* TEXT */
 .title{
 font-size:22px;
-margin-bottom:6px;
+margin-bottom:8px;
 }
 
 .desc{
@@ -90,16 +77,17 @@ backdrop-filter: blur(10px);
 /* TEXTAREA */
 textarea{
 width:100%;
-height:90px;
+height:100px;
 margin-top:10px;
-padding:10px;
+padding:12px;
 border:none;
-border-radius:10px;
+border-radius:12px;
+font-size:14px;
 }
 
-/* SEND BUTTON */
+/* SEND */
 .send{
-margin-top:10px;
+margin-top:12px;
 width:100%;
 padding:12px;
 border:none;
@@ -108,16 +96,38 @@ background:white;
 color:black;
 }
 
+/* STORY + JAM */
+.section{
+margin-top:28px;
+padding:18px;
+background: rgba(255,255,255,0.05);
+border-radius:16px;
+text-align:left;
+}
+
+.section h2{
+text-align:center;
+margin-bottom:12px;
+}
+
+.section p{
+font-size:14px;
+line-height:1.8;
+color:#e6f0f2;
+margin-bottom:12px;
+}
+
 /* FOOTER */
 .footer{
-margin-top:25px;
+margin-top:30px;
 font-size:13px;
+text-align:center;
 }
 
 .footer a{
 color:white;
 text-decoration:none;
-margin:0 8px;
+margin:0 6px;
 }
 </style>
 </head>
@@ -130,25 +140,99 @@ margin:0 8px;
 
 <div class="main">
 
-<div class="title">Soul Space Chennai™</div>
+<div class="title">Soul Space Chennai</div>
 
 <div class="desc">
-Unspoken thoughts. Silent pain.<br>
-You don’t have to carry it alone.
+Not everything needs to be said to be understood.
 </div>
 
 <a href="https://wa.me/916380896485" class="btn wa">Chat on WhatsApp</a>
 <a href="https://instagram.com/soulspacechennai" class="btn ig">Follow on Instagram</a>
 
+<!-- EMOTIONAL BOX -->
 <div class="card">
-<p>Share what you're feeling… 🤍</p>
+<p>
+Somewhere inside you…  
+there’s something you haven’t said to anyone.  
+You can say it here. 🤍
+</p>
 
-<textarea id="msg" placeholder="Write anything you're going through..."></textarea>
+<textarea id="msg" placeholder="Type what you're feeling… no judgment, no pressure..."></textarea>
 
 <button class="send" onclick="sendMsg()">Send</button>
 </div>
 
+<!-- STORY -->
+<div class="section">
+<h2>What is Soul Space?</h2>
+
+<p>
+Soul Space is not something you attend.  
+It’s something you feel.
+</p>
+
+<p>
+It’s a space where you can exist without pretending.
+</p>
+
+<p>
+In a world where everyone is trying to explain themselves…  
+this is where you don’t have to.
+</p>
+
+<p>
+You can meet people who understand you  
+even without words.
+</p>
+
+<p>
+No pressure to speak.  
+No need to impress.  
+No need to be anything other than real.
+</p>
+
+<p>
+Sometimes… being seen is enough.  
+Sometimes… being felt is enough.
+</p>
+
+<p>
+That’s what Soul Space is.
+</p>
+</div>
+
+<!-- MUSIC JAM SECTION -->
+<div class="section">
+<h2>Music Jam</h2>
+
+<p>
+Not everything needs words.  
+Some feelings just want sound.
+</p>
+
+<p>
+In Soul Space, music becomes another way to express  
+what you can’t explain.
+</p>
+
+<p>
+A soft hum… a guitar string…  
+or just sitting in silence while someone plays.
+</p>
+
+<p>
+No performance.  
+No judgment.  
+Just presence.
+</p>
+
+<p>
+Sometimes… music says what the heart cannot.
+</p>
+</div>
+
 <div class="footer">
+© 2026 Soul Space Chennai. All rights reserved <br><br>
 <a href="contact.html">Contact</a> |
 <a href="terms.html">Terms</a>
 </div>
